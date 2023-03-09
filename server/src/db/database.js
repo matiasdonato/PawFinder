@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 require("dotenv").config()
 
-const MONGODB_URI = `mongodb+srv://${process.env.MONGODB_HOST}/${process.env.MONGODB_DATABASE}`
+const MONGODB_URI = `${process.env.MONGODB_URI}`
 
 mongoose.connect(MONGODB_URI, {
         useUnifiedTopology: true,

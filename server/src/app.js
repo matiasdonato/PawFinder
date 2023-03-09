@@ -8,11 +8,9 @@ const fs = require('fs');
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors());
 
-app.use("/", (req, res) => {
-    res.send("Hello World")
-})
+
+
 
 //aplying middlewares
 function loadFunctionsFromFolder(folderPath) {
@@ -26,5 +24,11 @@ function loadFunctionsFromFolder(folderPath) {
         });
 }
 loadFunctionsFromFolder("./src/routes")
+
+app.use("/", (req, res) => {
+    res.send("Hello World")
+})
+
+app.use(cors());
 
 module.exports = app;

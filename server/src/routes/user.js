@@ -24,6 +24,10 @@ router.get("/", async(req, res) => {
         .catch((error) => res.json({ message: error }))
 })
 
+router.get("/hola", async(req, res) => {
+    res.send("hola")
+})
+
 router.get("/dogs", async(req, res) => {
     await userSchema.aggregate([{
             $lookup: {
